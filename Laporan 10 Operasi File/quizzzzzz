@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+main(){
+		
+	FILE *pf;
+	char nama[20];
+	int bagian, hitung1=0, hitung2=0, hitung3=0;
+	
+	if((pf =fopen("latihan.txt", "r")) != NULL) {
+	while(fgets(nama,11,pf))
+	{
+		printf("%s\n",nama);
+bagian = nama[0];
+printf("%s", bagian);
+		if(bagian=='1'){
+			hitung1++;
+		}else if(bagian=='2'){
+			hitung2++;
+		}else if(bagian=='3'){
+			hitung3++;
+		}
+	}
+	printf("\njumlah kategori A : %d", hitung1);	
+	printf("\njumlah kategori A : %d", hitung2);
+	printf("\njumlah kategori A : %d", hitung3);
+	fclose(pf);
+}}
